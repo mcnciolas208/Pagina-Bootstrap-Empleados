@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Lista Trabajos</title>
+  </head>
+  <body class="ventana">
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="dash.html">Hi,gabriel</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="Lista-Empleados.html">Empleados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trabajos</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+                <div class="input-group">
+                    <input type="search" class="form-control form-control-sm" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-success small" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+            <a href="index.html" class="camb btn btn-sm btn-warning"> Salir</a>
+          </div>
+        </div>
+    </nav>
+    <!-- nav -->
+
+    <!-- dashboard contenido -->
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-lg-3 col-md-3">
+                <div class="list-group small">
+                    <div class="list-group-item active">Datos Trabajos</div>
+                    <a href="#" class="list-group-item" data-bs-toggle="modal" data-bs-target="#Agregar_Trabajo">Agregar Nuevo Trabajo</a>
+                    <a href="Lista-Trabajos.html" class="list-group-item">Ver todos los Trabajos</a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <table class="table table-striped table-hover bg-light small">
+                    <tr class="table-dark">
+                        <th>Id</th>
+                        <th>Nombre del trabajo</th>
+                        <th>Detalles</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Web Designer</td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#Detalles_Trabajo1" class="btn btn-sm btn-info">Detalles</a></td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#Editar_Detalles_Trabajo1" class="btn btn-sm btn-warning">Editar</a></td>
+                        <td><a href="#" class="btn btn-sm btn-danger" onclick="confirm('Seguro que lo quieres eliminar Web designer?')">Eliminar</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Graphic Designer</td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#Detalles_Empleado" class="btn btn-sm btn-info">Detalles</a></td>
+                        <td><a href="#" class="btn btn-sm btn-warning">Editar</a></td>
+                        <td><a href="#" class="btn btn-sm btn-danger">Eliminar</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Web Developer</td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#Detalles_Empleado" class="btn btn-sm btn-info">Detalles</a></td>
+                        <td><a href="#" class="btn btn-sm btn-warning">Editar</a></td>
+                        <td><a href="#" class="btn btn-sm btn-danger">Eliminar</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- dashboard contenido -->
+  
+  <!-- Agregar Empleo Modal -->
+  <div class="modal fade" id="Agregar_Trabajo" tabindex="-1" aria-labelledby="Agregar_Trabajo" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Detalles del Trabajo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+              <div class="mb-3">
+                  <input type="date" class="form-control form-control-sm" required>
+              </div>
+              <div class="mb-3">
+                  <input type="text" class="form-control form-control-sm" placeholder="Nombre Trabajo" required>
+              </div>
+              <div class="mb-3">
+                  <button type="submit" class="btn btn-sm btn-success">Agregar Nuevo Trabajo</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detalles Model -->
+  <div class="modal fade" id="Detalles_Trabajo1" tabindex="-1" aria-labelledby="Detalles_Trabajo1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalles del Trabajo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th>Fecha creacion Trabajo</th>
+                <td>1 Julio 2020</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>Web Designer</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Editar detalles empleados -->
+  <div class="modal fade" id="Editar_Detalles_Trabajo1" tabindex="-1" aria-labelledby="Editar_Detalles_Empleado1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Detalles del Trabajo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+              <div class="mb-3">
+                  <input type="text" class="form-control form-control-sm" value="1-07-2020"required>
+              </div>
+              <div class="mb-3">
+                  <input type="text" class="form-control form-control-sm" value="Web Designer" required>
+              </div>
+              <div class="mb-3">
+                  <button type="submit" class="btn btn-sm btn-success">Actualizar Trabajo</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  </body>
+</html>
